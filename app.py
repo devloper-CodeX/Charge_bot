@@ -1,3 +1,4 @@
+
 import requests
 import uuid
 import telebot
@@ -42,9 +43,9 @@ def create_card_token(card_number, exp_month, exp_year, cvc):
     data = {
         'guid': 'fe5d9216-ca1c-4486-bd2a-d786fbb9ed88607e7e',
         'muid': '80094856-65f3-43c0-9a49-8c731666698c0ec4c7',
-        'sid': '67291b1b-a488-4c97-a195-612005e0ee71a7d80e',
+        'sid': '7633eaee-adf5-462d-b2ab-ea8ae29b52e2756cd5',
         'referrer': 'https://sk-charge-api.onrender.com',
-        'time_on_page': '19779',
+        'time_on_page': '22240',
         'card[number]': card_number,
         'card[cvc]': cvc,
         'card[exp_month]': exp_month,
@@ -81,7 +82,7 @@ def make_payment(token):
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'same-origin',
         'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36',
-        'cookie': '__stripe_mid=80094856-65f3-43c0-9a49-8c731666698c0ec4c7; __stripe_sid=67291b1b-a488-4c97-a195-612005e0ee71a7d80e; connect.sid=s%3AFCAoVysNDDLjGFggbtmH1CnllKC4qIIi.rSlTqdaZSzfZwuz5c7K5F%2FoKc%2BtuoaZdIiLZ1E6oW8U'
+        'cookie': '__stripe_mid=80094856-65f3-43c0-9a49-8c731666698c0ec4c7; connect.sid=s%3AbAg6wPrfE16HQaCnHEih23EDAHjRbj8Y.2U0z1rGPEnLcLw2Yn6eZPDarmRAz%2FLUwyObduOEX9rQ; __stripe_sid=7633eaee-adf5-462d-b2ab-ea8ae29b52e2756cd5'
     }
     
     payload = {'token': token}
@@ -231,7 +232,7 @@ def handle_macc(message):
 𝘚𝘒 𝘔𝘈𝘚𝘚 𝘊𝘏𝘌𝘊𝘒 (𝘚𝘛𝘙𝘐𝘗E 0.65$) 
 
 𝗧𝗢𝗧𝗔𝗟 𝗖𝗔𝗥𝗗𝗦 : {len(valid_cards)}
-𝘚𝘛𝘈𝘛𝘜𝘚 : 𝘐𝘕 𝘗𝘌𝘕𝘋𝘐𝘕𝘎 �𝘈𝘙𝘋𝘚 WAIT ... 
+𝘚𝘛𝘈𝘛𝘜𝘚 : 𝘐𝘕 𝘗𝘌𝘕𝘋𝘐𝘕𝘎 𝘊𝘈𝘙𝘋𝘚 WAIT ... 
 """
         sent_msg = bot.reply_to(message, initial_msg, parse_mode='HTML')
         
@@ -266,7 +267,7 @@ def handle_macc(message):
                 
                 card_result = f"""
 𐓏 𝙲𝙰𝚁𝙳 : <code>{card_number}|{exp_month}|{exp_year}|{cvc}</code>
-𐓏 𝘈𝘗𝘐 𝘙𝘌𝘚𝘗𝘖𝘕𝘚𝘌 : {error_msg}{" " + emoji if emoji else ""}
+𐓏 𝘈𝘗𝘐 �𝙀𝙎𝙋𝙊𝙉𝙎𝙀 : {error_msg}{" " + emoji if emoji else ""}
 𐓏 𝘋𝘌𝘊𝘓𝘐𝘕𝘌 𝘊𝘖𝘋𝘌 : {decline_code}{" " + emoji if emoji else ""}
 {bin_info}"""
             
